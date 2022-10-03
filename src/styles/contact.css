@@ -1,0 +1,24 @@
+.contact-field{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* margin:25px; */
+  padding:45px;
+}
+.contact-p{
+  text-align: center;
+  max-width: 400px;
+  font-size: 1.3rem;
+}
+
+.socials{
+  display:flex;
+  margin-top:50px;
+  justify-content: center;
+  gap:30px;
+}
+
+.icon{
+  font-size: 2.5rem;
+}

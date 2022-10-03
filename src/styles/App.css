@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+.App{
+  font-family: 'Shadows Into Light', cursive;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  background: linear-gradient( 45deg, rgb(90, 90, 90), rgb(134, 133, 133));
+  border-radius: 10px;
+  margin:50px;
+  padding: 0 25px 75px 25px;
+}
+.hidden {
+  display: none;
+}
