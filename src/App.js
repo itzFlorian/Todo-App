@@ -5,7 +5,6 @@ import NavBar from './components/NavBar';
 import Main from './components/Main';
 import Contact from './components/Contact';
 
-
 function App() {
   const [taskList, setList] = useState([])
   const [id, setId] = useState(0)
