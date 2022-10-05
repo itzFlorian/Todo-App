@@ -1,7 +1,7 @@
 import {useState} from "react"
 import "../styles/form.css"
 
-const Form = ({taskList, setList, id, setId})=>{
+const Form = ({taskList, setList, id, setId, addTask})=>{
   const [date, setDate] = useState("")
   const [inputValue, setInputValue] = useState("") 
 
@@ -19,7 +19,7 @@ const Form = ({taskList, setList, id, setId})=>{
   <>
     <form 
     className="form"
-    onSubmit={(event)=>{formSubmitHandler(event)}} >      
+    onSubmit={(event)=>{addTask(inputValue, date)}} >      
         <input type="text" id="todo" placeholder="Fill in your task" value={inputValue}
         onChange={(event)=>{setInputValue(event.target.value)}} />
         <input type="date" name="date" id="date" value={date} 
