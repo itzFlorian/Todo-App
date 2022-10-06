@@ -1,5 +1,6 @@
 {
   "name": "to-do-app",
+  "homepage": "https://itzFlorian.github.io/Todo-App",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -37,7 +37,7 @@ const Main = () => {
   
   
   useEffect(()=>{
-    const storageTask = JSON.parse(localStorage.getItem("task"))
+    const storageTask = JSON.parse(localStorage.getItem("tasks"))
     const storageId = JSON.parse(localStorage.getItem("id"))
     if( storageTask !== null && storageTask.length !== 0 ){
       storage(storageTask)
@@ -46,9 +46,9 @@ const Main = () => {
       setId(storageId)
     }
   },[])
-    
+
   useEffect(()=>{
-    localStorage.setItem("task", JSON.stringify(tasks))
+    localStorage.setItem("tasks", JSON.stringify(tasks))
     localStorage.setItem("id", JSON.stringify(id))
   }, [tasks, id])  
   
