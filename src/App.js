@@ -1,13 +1,10 @@
 import './styles/App.css';
-import {useState} from "react"
 import {Routes, Route} from "react-router-dom"
 import NavBar from './components/NavBar';
 import Main from './components/Main';
 import Contact from './components/Contact';
 
 function App() {
-
-
   return (
     <div className="App">
       <NavBar />
