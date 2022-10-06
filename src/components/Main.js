@@ -33,12 +33,9 @@ const Main = () => {
   const addTask = (input, date)=> dispatch({type:"addTask", input:input, date:date})
   const delTask = (task)=> dispatch({type:"delTask", task:task})
   const doneTask = (task)=> dispatch({type:"doneTask", task:task})
-  const storage = (storageTask) => dispatch({type:"localStorage", storageTask:storageTask})
-
-
-  const finish = tasks.filter((obj)=> obj.done) 
-  const undone = tasks.filter((obj)=> !obj.done)
-
+  const storage = (storageTask)=> dispatch({type:"localStorage", storageTask:storageTask})
+  
+  
   useEffect(()=>{
     const storageTask = JSON.parse(localStorage.getItem("task"))
     const storageId = JSON.parse(localStorage.getItem("id"))
@@ -49,12 +46,17 @@ const Main = () => {
       setId(storageId)
     }
   },[])
-  
+    
   useEffect(()=>{
     localStorage.setItem("task", JSON.stringify(tasks))
     localStorage.setItem("id", JSON.stringify(id))
   }, [tasks, id])  
-    
+  
+
+  const finish = tasks.filter((obj)=> obj.done) 
+  const undone = tasks.filter((obj)=> !obj.done)
+
+
   return (
     <div>
       <Header />
