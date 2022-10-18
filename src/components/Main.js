@@ -3,6 +3,7 @@ import Form from './Form';
 import Header from './Header';
 
 const Main = ({taskList, setList, id, setId}) => {
+
   const toggleDone = (id)=>{
     const newList = taskList.map(task=> task.id === id ? {...task, done:!task.done} : task)    
     setList(newList) 
@@ -16,8 +17,8 @@ const Main = ({taskList, setList, id, setId}) => {
       <Header />
       <Form taskList={taskList} setList={setList} id={id} setId={setId}/>
       <div className="task-container"> 
-        {finish.map(task=> <CreateTask task={task} toggleDone={toggleDone} taskList={taskList} setList={setList} />)}
-        {undone.map(task=> <CreateTask task={task} toggleDone={toggleDone} taskList={taskList} setList={setList}/>)}
+        {finish.map(task=> <CreateTask key={task.id} task={task} toggleDone={toggleDone} taskList={taskList} setList={setList} />)}
+        {undone.map(task=> <CreateTask key={task.id} task={task} toggleDone={toggleDone} taskList={taskList} setList={setList}/>)}
       </div>
     </div>
   );

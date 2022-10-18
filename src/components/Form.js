@@ -24,7 +24,7 @@ const Form = ({taskList, setList, id, setId})=>{
         onChange={(event)=>{setInputValue(event.target.value)}} />
         <input type="date" name="date" id="date" value={date} 
         onChange={(event)=>{setDate(event.target.value)}} />
-        <button class="submit">Add Task</button>
+        <button className="submit">Add Task</button>
       </form>
     </>
     
