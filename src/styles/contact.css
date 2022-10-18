@@ -4,12 +4,12 @@
   align-items: center;
   justify-content: center;
   /* margin:25px; */
-  padding:45px;
+  padding:25px;
 }
 .contact-p{
   text-align: center;
   max-width: 400px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 .socials{
