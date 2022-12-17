@@ -5,14 +5,24 @@ const Form = ({taskList, setList, id, setId})=>{
   const [date, setDate] = useState("")
   const [inputValue, setInputValue] = useState("") 
 
-  const formSubmitHandler = (event)=>{
+  const formSubmitHandler = (event)=>{    
     event.preventDefault()
-    const newId = id + 1
-    setId(newId)
-    const newList = [...taskList, {id:id, text:inputValue, done:false, date:date}]
-    setList(newList)
-    setInputValue("")
-    setDate("") 
+    fetch("http://localhost:4000/", {
+      method: 'POST',
+      body: JSON.stringify({text:inputValue,done:false, date:date}),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        const newList = [...taskList, json]
+        setList(newList)
+        setInputValue("")
+        setDate("")
+      });
+      const newId = id + 1
+      setId(newId)
   }
 
   return (

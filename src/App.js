@@ -21,15 +21,18 @@ function App() {
   },[])
   
   useEffect(()=>{
-    localStorage.setItem("tasks", JSON.stringify(taskList))
-    localStorage.setItem("id", JSON.stringify(id))
-  }, [taskList, id])
+    fetch("http://localhost:4000/")
+      .then((response) => response.json())
+      .then((json) => {
+        setList(json)
+      })
+  },[])
 
   return (
     <div className="App">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Main taskList={taskList} setList={setList} id={id} setId={setId} />} />
+        <Route path="/Todo-App" element={<Main taskList={taskList} setList={setList} id={id} setId={setId} />} />
         <Route path="/contact" element={<Contact />} />
     </Routes>
     </div>

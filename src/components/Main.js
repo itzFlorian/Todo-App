@@ -1,12 +1,23 @@
 import CreateTask from "./CreateTask"
 import Form from './Form';
 import Header from './Header';
+const URL = "http://localhost:4000/"
 
 const Main = ({taskList, setList, id, setId}) => {
 
-  const toggleDone = (id)=>{
-    const newList = taskList.map(task=> task.id === id ? {...task, done:!task.done} : task)    
-    setList(newList) 
+  const toggleDone = (id, done)=>{
+    fetch("http://localhost:4000/", {
+  method: 'PATCH',
+  body: JSON.stringify({id, done:!done}),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then(() => {
+    const newList = taskList.map(task=> task._id === id ? {...task, done:!task.done} : task)    
+    setList(newList)     
+  });  
   }
   
   const finish = taskList.filter((obj)=> obj.done) 
