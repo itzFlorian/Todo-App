@@ -16,6 +16,9 @@ h2{
   gap:35px;
   padding: 25px 0;
 }
+.navbar a{
+  font-size: 1.5rem;
+}
 .help-right{
   align-self: flex-end;
 }
@@ -31,14 +34,14 @@ a{
 }
 .help-container{
   position:fixed;
-  top:35px;
+  top:15%;
+  left:20%;
   background: linear-gradient( 45deg, rgb(90, 90, 90), rgb(134, 133, 133));
   box-shadow: 0 0 1000px 1000px rgb(0 0 0 / 0.6);
-  margin: 0 auto;
   border: 2px solid black;
   width: 50%;
   height: fit-content;
-  padding: 25px;
+  padding: 50px;
   color:black;
   z-index:2;
   border-radius: 15px;
